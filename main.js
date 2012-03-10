@@ -1,8 +1,19 @@
 function drawBalance(xml)
-{		
+{	
 	var rub;
-	//try
-	{		
+	{
+		var errorCode = $("errorCode", xml);
+		if (errorCode.length)
+		{
+			error = parseInt(errorCode[0].text);
+			if (error == 1)		
+				throw new Error(strings.inputError);
+			else if (error == 2)
+				throw new Error(strings.innerError);
+			else if (error == 3)
+				throw new Error(strings.methodNotFoundError);
+		}
+	
 		var balance = $("balance", xml);
 		if (balance.length)
 		{
@@ -54,13 +65,6 @@ function drawBalance(xml)
 			text[4].nodeValue = arr[3];
 		}	
 	}
-	//catch (err)
-	{
-		/*$('#gadgetContent').get(0).style.display = 'none';
-		$('#message').get(0).style.display = '';
-		$('#message').text(err.message);
-		return false;*/
-	}
 
 	if (rub)
 	{
@@ -85,11 +89,6 @@ function draw()
 
 	try 
 	{
-		//xmlhttp.open('POST', 'https://billing.novotelecom.ru/billing/user/index?act=login', true);
-		//xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-		//xmlhttp.setRequestHeader("Connection", "close");
-		//xmlhttp.send('backurl=&login=' + login +'&private_password='+password+'&+Enter+=%C2%EE%E9%F2%E8');
-
 		xmlhttp.open('GET', 'https://api.novotelecom.ru/billing/?method=userInfo&login='+login+'&passwordHash=' + password+ "&clientVersion=2", true);
 		xmlhttp.setRequestHeader('Content-Type', 'text/xml; charset=utf-8');
 		xmlhttp.setRequestHeader("Connection", "close");		
