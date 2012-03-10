@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=windows-1251">
+  <link href="main.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript" src="strings.js"></script>
+	<script type="text/javascript" src="libs.js"></script>
+	<script type="text/javascript" src="main.js"></script>
+  <title></title>
+</head>
+<body>
+	<g:background id="background" style="position:absolute;z-index:-1;top:0;left:0;"></g:background>
+	<div id="gadgetContent">
+		<div id="undocked" >
+			<div class="rxt personal">
+				<div class="rxt-content">
+					<h2 id="first_name">Сидоров<br>Иван<br>Петрович</h2>
+					<span>Договор №<span id="contractId">1234<!-- номер договора --></span></span>			
+				</div>
+			</div>
+			<div class="rxt personal-physical">
+				<div class="rxt-content">
+					<h1 id="balance"><!-- xxx.xx р.--></h1>
+						<div class="porog" id="days2BlockStr"><!-- Хватит примерно на X дней --></div>
+						<span class="porog">Порог отключения: <b id="debetBound"><!-- -300 --></b></span><br>
+					<div id="debet" style="display:none">
+					<div class="separate"><!-- --></div>
+					<center>
+						<span style="color: white;">Включена отсрочка платежа</span>
+					</center>	
+					</div>
+					<div class="date">
+						<p id="date">12.05.2011 12:18</p>	
+					</div>
+				</div>							
+			</div>
+		</div>
+		<div id="docked">
+			<h2 id="balance_docked"><!-- xxx.xx р.--></h2>
+			<p id="days2BlockStr_docked"><!-- Хватит примерно на X дней --></p>		
+		</div>
+	</div>
+	<div id="message" style="display: none;">message</div>
+</body>
+</html>

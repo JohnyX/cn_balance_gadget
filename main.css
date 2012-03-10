@@ -1,0 +1,64 @@
+body {
+    margin: 0;
+    padding: 0;
+
+    font: 100.1% Verdana;
+	font-size: 75%;
+}
+
+.rxt.personal .rxt-content {
+	border-bottom: none;
+	border-top: none;
+	margin: 0px 9px;
+}*
+
+.rxt.personal-physical .rxt-content {
+	color: white;
+	padding: 0px 10px 0px;
+	margin: 10px 0px 0px;
+}
+
+h2 {
+	display: block;
+	font-size: 120%;
+	font-weight: bold;
+	margin: 0px 0px 5px;
+}
+
+.rxt.personal-physical .porog {
+	font-size: 95%;
+	font-weight: bold;
+	padding-bottom: 10px;
+}
+
+.date {
+	margin: -15px 5px 0px 0px;
+	text-align: right;
+	font-size: 80%;
+}
+
+#balance {
+	border: none;
+	font-size: 255%;
+	font-weight: bold;
+	margin: 0px 0px 5px;
+}
+
+#message {
+	font-size: 10pt;
+	padding: 5pt;
+	text-align:center;
+}
+
+#docked h2{
+	margin:  10px 0px 0px;
+	text-align:center;
+}
+
+#docked p{
+	margin:  13px 0px 0px;
+	text-align:center;
+	color: white;
+	font-weight: bold;
+}
+

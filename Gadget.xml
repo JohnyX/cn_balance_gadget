@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<gadget>
+  <name>Новотелеком.баланс</name>
+  <version>2.2</version>
+    <author name="Евгений Франскевич">
+        <info url="" />
+    </author>
+    <copyright>2011</copyright>
+    <description>Для отображения баланса в Новотелекоме</description>
+    <icons>
+		<!-- Иконка гаджета -->
+		<!-- http://www.iconarchive.com/show/tulliana-2-icons-by-umut-pulat/ksim-cpu-icon.html -->
+        <icon width="300" height="300" src="images/icon.png" />
+    </icons>
+  <hosts>
+    <host name="sidebar">
+    <base type="HTML" apiVersion="1.0.0" src="gadget.html" />
+    <permissions>full</permissions>
+    <platform minPlatformVersion="0.3" />
+    </host>
+  </hosts>
+</gadget>

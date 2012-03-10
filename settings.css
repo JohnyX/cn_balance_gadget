@@ -1,0 +1,24 @@
+﻿* {
+	margin:0;
+	padding:0;
+}
+
+body {
+	font: normal 14px/16px Segoe UI, Arial;
+	width:200em;
+	height:60em;
+}
+
+label{
+	display: block;
+	width: 4em;
+	float: left;
+}
+
+input{
+	width: 90%;
+}
+
+.error {
+	border:2px solid red;
+}
