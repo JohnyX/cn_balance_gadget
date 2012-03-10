@@ -6,10 +6,10 @@ function drawBalance(xml)
 		var balance = $("balance", xml);
 		if (balance.length)
 		{
-			rub = parseFloat(balance[0].text);
+			rub = parseFloat(balance[0].text).toFixed(2);
 			
-			$('#balance').text(balance[0].text+' ð.');
-			$('#balance_docked').text(balance[0].text+' ð.');
+			$('#balance').text(rub+' ð.');
+			$('#balance_docked').text(rub+' ð.');
 		}
 		
 		var debetBound = $("debetBound", xml);
@@ -81,7 +81,7 @@ function draw()
 	var xmlhttp = new XMLHttpRequest();
 
 	var login = xor(System.Gadget.Settings.readString('login'));
-	var password = xor(System.Gadget.Settings.readString('password'));
+	var password = System.Gadget.Settings.readString('password');
 
 	try 
 	{
@@ -90,7 +90,7 @@ function draw()
 		//xmlhttp.setRequestHeader("Connection", "close");
 		//xmlhttp.send('backurl=&login=' + login +'&private_password='+password+'&+Enter+=%C2%EE%E9%F2%E8');
 
-		xmlhttp.open('POST', 'https://billing.novotelecom.ru/billing/user/api/?method=userInfo&login='+login+'&password=' + password, true);
+		xmlhttp.open('GET', 'https://api.novotelecom.ru/billing/?method=userInfo&login='+login+'&passwordHash=' + password+ "&clientVersion=2", true);
 		xmlhttp.setRequestHeader('Content-Type', 'text/xml; charset=utf-8');
 		xmlhttp.setRequestHeader("Connection", "close");		
 		xmlhttp.send(null);

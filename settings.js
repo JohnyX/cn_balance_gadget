@@ -21,7 +21,7 @@
 		
 		if(!event.cancel) {	
 			System.Gadget.Settings.writeString('login', xor($('#login').val()));
-			System.Gadget.Settings.writeString('password', xor($('#password').val()));
+			System.Gadget.Settings.writeString('password', hex_md5($('#password').val()));
 		}		
     }
 }
@@ -31,7 +31,7 @@ function main() {
 	
 	// считываем старые значения настроек и показываем их в форме
 	$('#login').val(xor(System.Gadget.Settings.readString('login')));
-	$('#password').val(xor(System.Gadget.Settings.readString('password')));
+	$('#password').val("");
 }
 
 $(document).ready(main);
